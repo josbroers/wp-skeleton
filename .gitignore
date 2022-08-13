@@ -1,0 +1,48 @@
+# Application
+web/app/plugins/*
+web/app/mu-plugins/*/
+web/app/upgrade
+web/app/uploads/*
+web/app/cache
+web/app/w3tc-config
+web/app/settings
+web/app/advanced-cache.php
+web/app/ewww
+web/app/debug.log
+
+!web/app/uploads/.gitkeep
+!web/app/plugins/.gitkeep
+!web/app/plugins/jobrodo
+
+# WordPress
+web/wp
+web/.htaccess
+
+# Logs
+*.log
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Composer
+/vendor
+
+# WP-CLI
+wp-cli.local.yml
+db-sync
+sql-dump-*.sql
+
+# Old versions
+_old/*
+
+# Misc
+.idea
+.parcel-cache
+dist
+node_modules
+.DS_Store
+Thumbs.db
+npm-debug.log
+nginx.conf

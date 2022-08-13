@@ -1,0 +1,16 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "color-hex-length": "long",
+    "color-hex-case": "upper",
+    "string-quotes": "single",
+    "selector-class-pattern": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "alpha-value-notation": "number",
+    "color-function-notation": "legacy",
+    "indentation": "tab",
+    "max-line-length": null,
+    "scss/no-global-function-names": null,
+    "scss/at-if-no-null": null
+  }
+}

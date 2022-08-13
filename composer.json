@@ -1,0 +1,91 @@
+{
+  "name": "jobrodo/wp-skeleton",
+  "type": "project",
+  "license": "MIT",
+  "description": "Jobrodo WP Stack",
+  "homepage": "https://www.jobrodo.nl/",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Jos Broers",
+      "email": "jos@jobrodo.nl",
+      "homepage": "https://github.com/jos-broers"
+    }
+  ],
+  "config": {
+    "preferred-install": "dist",
+    "generate-salts": true,
+    "remove-default-content-dir": true,
+    "allow-plugins": {
+      "composer/installers": true,
+      "johnpbloch/wordpress-core-installer": true,
+      "roots/wordpress-core-installer": true
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
+    }
+  ],
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.7.1",
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-0": {
+      "Jobrodo\\Installer": "scripts"
+    },
+    "psr-4": {
+      "Jobrodo\\Plugin\\": "web/app/plugins/jobrodo/src"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "Jobrodo\\Installer::install"
+    ],
+    "post-update-cmd": [
+      "Jobrodo\\Installer::update"
+    ],
+    "test": [
+      "phpcs"
+    ]
+  },
+  "require": {
+    "php": ">=8.0",
+    "composer/installers": "^2.1",
+    "vlucas/phpdotenv": "^5.4",
+    "oscarotero/env": "^2.1",
+    "johnpbloch/wordpress": "^6.0",
+    "roots/bedrock-autoloader": "^1.0",
+    "roots/bedrock-disallow-indexing": "^2.0",
+    "roots/wp-config": "1.0.0",
+    "roots/wp-password-bcrypt": "1.1.0",
+    "wpackagist-plugin/safe-redirect-manager": "^1.11",
+    "wpackagist-plugin/simple-page-ordering": "^2.4",
+    "wpackagist-plugin/wp-mail-smtp": "^3.5",
+    "wpackagist-plugin/wordpress-seo": "^19.5",
+    "wpackagist-plugin/ewww-image-optimizer": "^6.7",
+    "wpackagist-plugin/w3-total-cache": "^2.2",
+    "wpackagist-plugin/wp-fail2ban": ">=4.4.0"
+  },
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    },
+    "wordpress-install-dir": "web/wp"
+  }
+}
