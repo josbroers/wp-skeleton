@@ -9,6 +9,12 @@ namespace Jobrodo\Theme\App\Setup;
  */
 add_action( 'after_setup_theme', function () {
 	/**
+	 * Load the theme’s translated strings.
+	 * @link https://developer.wordpress.org/reference/functions/load_theme_textdomain/
+	 */
+	load_theme_textdomain( 'jobrodo-theme', get_template_directory() . '/languages' );
+
+	/**
 	 * Register the navigation menus.
 	 * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
 	 */
@@ -41,4 +47,11 @@ add_action( 'after_setup_theme', function () {
 		'script',
 		'style',
 	] );
+
+	/**
+	 * Restoring the classic Widgets Editor.
+	 * Disable when using the Block Editor!
+	 * @link   https://developer.wordpress.org/block-editor/how-to-guides/widgets/opting-out/
+	 */
+	remove_theme_support( 'widgets-block-editor' );
 }, 20 );

@@ -40,6 +40,51 @@ class Installer {
 	private static $composer;
 	private static $io;
 
+	/**
+	 * Install command for composer.
+	 *
+	 * @param $event
+	 *
+	 * @return void
+	 * @throws Exception
+	 */
+	public static function install( $event ): void {
+		self::$root     = dirname( __DIR__, 2 );
+		self::$composer = $event->getComposer();
+		self::$io       = $event->getIO();
+
+		// Remove WPs default content directory with standard plugins and themes.
+		self::remove_default_content_dir();
+
+		// Create config file if IO is interactive.
+		if (
+			self::$io->isInteractive() &&
+			self::$io->askConfirmation( '<info>Create the config file?</info> [<comment>Y,n</comment>]? ', false )
+		) {
+			self::create_config_file();
+		}
+	}
+
+	/**
+	 * Remove the default `wp-content` directory.
+	 *
+	 * @return void
+	 */
+	private static function remove_default_content_dir(): void {
+		if ( ! self::$composer->getConfig()->get( 'remove-default-content-dir' ) ) {
+			return;
+		}
+
+		self::rrmdir( self::$root . '/web/wp/wp-content' );
+	}
+
+	/**
+	 * Remove a directory.
+	 *
+	 * @param $dir
+	 *
+	 * @return void
+	 */
 	private static function rrmdir( $dir ): void {
 		if ( is_dir( $dir ) ) {
 			$objects = scandir( $dir );
@@ -58,40 +103,12 @@ class Installer {
 		}
 	}
 
-	public static function install( $event ): void {
-		self::$root     = dirname( __DIR__, 2 );
-		self::$composer = $event->getComposer();
-		self::$io       = $event->getIO();
-
-		// Remove WPs default content directory with standard plugins and themes.
-		self::remove_default_content_dir();
-
-		// Create config file if IO is interactive.
-		if (
-			self::$io->isInteractive() &&
-			self::$io->askConfirmation( '<info>Create the config file?</info> [<comment>Y,n</comment>]? ', false )
-		) {
-			self::create_config_file();
-		}
-	}
-
-	public static function update( $event ): void {
-		self::$root     = dirname( __DIR__, 2 );
-		self::$composer = $event->getComposer();
-		self::$io       = $event->getIO();
-
-		// Remove WPs default content directory with standard plugins and themes.
-		self::remove_default_content_dir();
-	}
-
-	private static function remove_default_content_dir(): void {
-		if ( ! self::$composer->getConfig()->get( 'remove-default-content-dir' ) ) {
-			return;
-		}
-
-		self::rrmdir( self::$root . '/web/wp/wp-content' );
-	}
-
+	/**
+	 * Create the `.env` file.
+	 *
+	 * @return void
+	 * @throws Exception
+	 */
 	private static function create_config_file(): void {
 		$config_vars = array_map( static function ( $key ) {
 			$input = self::$io->ask( "<fg=cyan>What is the value of {$key}?</> ", '' );
@@ -120,6 +137,9 @@ class Installer {
 	}
 
 	/**
+	 * Salting passwords helps against tools which has stored hashed values of common dictionary strings.
+	 * The added values makes it harder to crack.
+	 *
 	 * @throws Exception
 	 */
 	private static function generate_salt(): string {
@@ -133,6 +153,22 @@ class Installer {
 		}
 
 		return $salt;
+	}
+
+	/**
+	 * Update command for composer.
+	 *
+	 * @param $event
+	 *
+	 * @return void
+	 */
+	public static function update( $event ): void {
+		self::$root     = dirname( __DIR__, 2 );
+		self::$composer = $event->getComposer();
+		self::$io       = $event->getIO();
+
+		// Remove WPs default content directory with standard plugins and themes.
+		self::remove_default_content_dir();
 	}
 
 }

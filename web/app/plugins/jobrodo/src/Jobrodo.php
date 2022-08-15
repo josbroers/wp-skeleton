@@ -5,10 +5,12 @@ namespace Jobrodo\Plugin;
 class Jobrodo {
 	private static $instance = null;
 
-	public Wrapper $wrapper;
+	public Language $language;
+	public Wrapper  $wrapper;
 
 	public function __construct() {
-		$this->wrapper = new Wrapper();
+		$this->language = new Language();
+		$this->wrapper  = new Wrapper();
 
 		add_filter( 'template_include', [ $this->wrapper, 'filter__template_include' ], 109 );
 	}

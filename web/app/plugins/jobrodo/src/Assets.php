@@ -21,7 +21,7 @@ class Assets {
 			throw new RuntimeException( "Unable to locate file: {$filename}." );
 		}
 
-		return "{$get_template_directory_uri}/dist/{$filename}";
+		return "{$get_template_directory_uri}/dist{$filename}";
 	}
 
 }

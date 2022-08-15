@@ -1,0 +1,3 @@
+[submodule "web/app/plugins/gravityforms"]
+	path = web/app/plugins/gravityforms
+	url = git@github.com:pronamic/gravityforms.git
