@@ -2,6 +2,8 @@
 
 namespace Jobrodo\Theme\App\Setup;
 
+use Jobrodo\Plugin\Assets;
+
 /**
  * Register the initial theme setup.
  *
@@ -54,4 +56,10 @@ add_action( 'after_setup_theme', function () {
 	 * @link   https://developer.wordpress.org/block-editor/how-to-guides/widgets/opting-out/
 	 */
 	remove_theme_support( 'widgets-block-editor' );
+
+	/**
+	 * Use main stylesheet for visual editor.
+	 * To add custom styles edit `/assets/styles/layouts/_tinymce.scss`.
+	 */
+	add_editor_style( ( new Assets() )->asset_path( '/styles/app.css' ) );
 }, 20 );

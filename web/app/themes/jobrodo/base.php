@@ -10,10 +10,12 @@ use function Jobrodo\Plugin\template_path;
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<?php get_template_part( 'templates/header' ); ?>
+
 <main>
 	<?php include template_path(); ?>
 </main>
 
 <?php get_template_part( 'templates/footer' ); ?>
 </body>
-</html
+</html>

@@ -1,3 +1,19 @@
 [submodule "web/app/plugins/gravityforms"]
 	path = web/app/plugins/gravityforms
 	url = git@github.com:pronamic/gravityforms.git
+
+[submodule "web/app/plugins/advanced-custom-fields-pro"]
+  path = web/app/plugins/advanced-custom-fields-pro
+  url = git@gitlab.com:wordpress-premium/advanced-custom-fields-pro.git
+
+[submodule "web/app/plugins/permalink-manager-pro"]
+  path = web/app/plugins/permalink-manager-pro
+  url = git@gitlab.com:wordpress-premium/permalink-manager-pro.git
+
+[submodule "web/app/plugins/wp-rocket"]
+  path = web/app/plugins/wp-rocket
+  url = git@gitlab.com:wordpress-premium/wp-rocket.git
+
+[submodule "web/app/plugins/rank-math-seo-pro"]
+  path = web/app/plugins/rank-math-seo-pro
+  url = git@gitlab.com:wordpress-premium/rank-math-seo-pro.git

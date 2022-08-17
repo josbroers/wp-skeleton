@@ -3,7 +3,7 @@
   "version": 2,
   "settings": {
     "custom": {
-      "borderRadius": "calc(1rem / 4)",
+      "borderRadius": "calc(1rem / 3)",
       "transitionDuration": "250ms",
       "transitionTimingFunction": "ease"
     },
@@ -18,15 +18,13 @@
           "name": "White",
           "slug": "white",
           "color": "#FFFFFF"
+        },
+        {
+          "name": "Blue",
+          "slug": "blue",
+          "color": "#0070F3"
         }
-      ],
-      "custom": false,
-      "customGradient": false,
-      "defaultPalette": false,
-      "defaultGradients": false
-    },
-    "spacing": {
-      "blockGap": true
+      ]
     },
     "typography": {
       "fontFamilies": [
@@ -34,6 +32,13 @@
           "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif",
           "slug": "primary-font",
           "name": "Primary Font"
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "16",
+          "size": "1rem",
+          "name": "16px"
         }
       ]
     }

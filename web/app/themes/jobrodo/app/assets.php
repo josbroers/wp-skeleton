@@ -8,3 +8,12 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'app_css', ( new Assets() )->asset_path( '/styles/app.css' ), false, null );
 	wp_enqueue_script( 'app_js', ( new Assets() )->asset_path( '/scripts/app.js' ), [], null, true );
 }, 100 );
+
+/**
+ * Import registered assets in footer.
+ */
+add_action( 'get_footer', function () {
+	if ( is_single() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+} );
