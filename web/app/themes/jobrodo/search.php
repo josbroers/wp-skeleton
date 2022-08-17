@@ -1,8 +1,6 @@
 <div class="container">
 	<?php if ( ! have_posts() ) : ?>
-		<div>
-			<?php _e( 'Sorry, geen resultaten gevonden.', 'seatsandsofas-theme' ); ?>
-		</div>
+		<div><?= __( 'Sorry, geen resultaten gevonden.', 'jobrodo-theme' ) ?></div>
 		<?php get_search_form(); ?>
 	<?php endif; ?>
 

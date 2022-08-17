@@ -61,13 +61,16 @@
     "roots/bedrock-disallow-indexing": "^2.0",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.1.0",
-    "wpackagist-plugin/safe-redirect-manager": "^1.11",
     "wpackagist-plugin/simple-page-ordering": "^2.4",
     "wpackagist-plugin/wp-mail-smtp": "^3.5",
-    "wpackagist-plugin/wordpress-seo": "^19.5",
     "wpackagist-plugin/ewww-image-optimizer": "^6.7",
-    "wpackagist-plugin/w3-total-cache": "^2.2",
-    "wpackagist-plugin/wp-fail2ban": ">=4.4.0"
+    "wpackagist-plugin/wp-fail2ban": ">=4.4.0",
+    "wpackagist-plugin/duplicate-post": "^4.5",
+    "monolog/monolog": "^2.8"
+  }
+  ,
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
   },
   "extra": {
     "installer-paths": {
