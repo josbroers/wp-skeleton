@@ -62,11 +62,13 @@
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.1.0",
     "wpackagist-plugin/simple-page-ordering": "^2.4",
-    "wpackagist-plugin/wp-mail-smtp": "^3.5",
     "wpackagist-plugin/ewww-image-optimizer": "^6.7",
-    "wpackagist-plugin/wp-fail2ban": ">=4.4.0",
     "wpackagist-plugin/duplicate-post": "^4.5",
-    "monolog/monolog": "^2.8"
+    "monolog/monolog": "^2.8",
+    "wpackagist-plugin/mailin": "^3.1",
+    "wpackagist-plugin/acf-better-search": "^4.0",
+    "wpackagist-plugin/rocket-lazy-load": "^2.3",
+    "wpackagist-plugin/akismet": "^5.0"
   }
   ,
   "require-dev": {
