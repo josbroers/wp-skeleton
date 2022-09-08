@@ -1,8 +1,7 @@
 {
   "name": "jobrodo-theme",
-  "version": "1.0.0",
-  "private": true,
-  "author": "INDICIA Interactiv <wordpress@indicia.nl>",
+  "license": "MIT",
+  "author": "Jos Broers <jos@jobrodo.nl>",
   "browserslist": [
     "> 5%",
     "ie 11",
