@@ -89,7 +89,8 @@ function cli( args ) {
 
 	switch ( options.type ) {
 		case "install":
-			execute( [ "./web/app/themes/jobrodo" ],
+			execute(
+				[ "./web/app/themes/jobrodo" ],
 				"npm ci",
 				"pipe",
 				"Installing dependencies...",
@@ -97,7 +98,8 @@ function cli( args ) {
 			);
 			break;
 		case "build":
-			execute( [ "./web/app/themes/jobrodo" ],
+			execute(
+				[ "./web/app/themes/jobrodo" ],
 				"npm run build",
 				"pipe",
 				"Building the packages",
@@ -105,14 +107,16 @@ function cli( args ) {
 			);
 			break;
 		case "watch":
-			execute( [ "./web/app/themes/jobrodo" ],
+			execute(
+				[ "./web/app/themes/jobrodo" ],
 				"npm run watch",
 				"inherit",
 				"Watching the theme"
 			);
 			break;
 		case "lint":
-			execute( [ "./web/app/themes/jobrodo" ],
+			execute( [
+					"./web/app/themes/jobrodo" ],
 				"npm run lint",
 				"inherit",
 				"Linting the files"
