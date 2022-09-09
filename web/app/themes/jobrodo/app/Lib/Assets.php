@@ -1,6 +1,6 @@
 <?php
 
-namespace Jobrodo\Plugin;
+namespace Jobrodo\Theme\Lib;
 
 use RuntimeException;
 

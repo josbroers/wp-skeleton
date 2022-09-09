@@ -1,5 +1,4 @@
 <?php
-
 /*
 Template Name: Voorbeeld layout
 Template Post Type: page
@@ -38,17 +37,17 @@ $blogname = get_option( 'blogname' );
 </style>
 
 <div class="layout">
-	<div class="container">
-		<h1>
-			Welcome to the<br/>
+  <div class="container">
+    <h1>
+      Welcome to the<br />
 			<?php get_template_part( 'templates/components/link', null, [
 				'title'   => "{$blogname} on GitHub",
 				'content' => "{$blogname}!",
 				'href'    => "github.com/jos-broers/wp-skeleton",
 				'target'  => '_blank',
 			] ) ?>
-		</h1>
-		<div>
+    </h1>
+    <div>
 			<?php get_template_part( 'templates/components/link', null, [
 				'class'   => 'btn btn--with-arrow',
 				'title'   => 'View on GitHub',
@@ -57,6 +56,6 @@ $blogname = get_option( 'blogname' );
 				'href'    => "github.com/jos-broers/wp-skeleton",
 				'target'  => '_blank',
 			] ) ?>
-		</div>
-	</div>
+    </div>
+  </div>
 </div>

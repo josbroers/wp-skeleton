@@ -1,4 +1,4 @@
 <div class="container">
-	<?= __( 'Sorry, de pagina die je probeert te bezoeken bestaat niet.', 'jobrodo-theme' ) ?>
+	<?= __( 'Sorry, the page you are trying to visit does not exist.', 'jobrodo-theme' ) ?>
 	<?php get_search_form(); ?>
 </div>

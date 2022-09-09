@@ -38,7 +38,7 @@
       "Jobrodo\\Installer": "scripts"
     },
     "psr-4": {
-      "Jobrodo\\Plugin\\": "web/app/plugins/jobrodo/src"
+      "Jobrodo\\Theme\\": "web/app/themes/jobrodo/app"
     }
   },
   "scripts": {
@@ -62,7 +62,6 @@
     "wpackagist-plugin/simple-page-ordering": "^2.4",
     "wpackagist-plugin/ewww-image-optimizer": "^6.7",
     "wpackagist-plugin/duplicate-post": "^4.5",
-    "monolog/monolog": "^2.8",
     "wpackagist-plugin/mailin": "^3.1",
     "wpackagist-plugin/acf-better-search": "^4.0",
     "wpackagist-plugin/rocket-lazy-load": "^2.3",

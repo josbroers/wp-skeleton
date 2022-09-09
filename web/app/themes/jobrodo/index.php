@@ -1,6 +1,6 @@
 <?php if ( ! have_posts() ) : ?>
 	<div>
-		<?= __( 'Sorry, geen resultaten gevonden.', 'jobrodo-theme' ) ?>
+		<?= __( 'Sorry, no results found.', 'jobrodo-theme' ) ?>
 	</div>
 	<?php get_search_form(); ?>
 <?php endif; ?>

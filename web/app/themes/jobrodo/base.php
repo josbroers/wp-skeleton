@@ -1,6 +1,6 @@
 <?php
 
-use function Jobrodo\Plugin\template_path;
+use Jobrodo\Theme\Lib\Wrapper;
 
 ?>
 
@@ -13,7 +13,7 @@ use function Jobrodo\Plugin\template_path;
 <?php get_template_part( 'templates/header' ); ?>
 
 <main>
-	<?php include template_path(); ?>
+
 </main>
 
 <?php get_template_part( 'templates/footer' ); ?>

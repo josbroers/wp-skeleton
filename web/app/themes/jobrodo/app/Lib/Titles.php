@@ -1,6 +1,6 @@
 <?php
 
-namespace Jobrodo\Plugin;
+namespace Jobrodo\Theme\Lib;
 
 class Titles {
 
@@ -15,7 +15,7 @@ class Titles {
 				return get_the_title( get_option( 'page_for_posts', true ) );
 			}
 
-			return __( 'Laatste berichten', 'jobrodo-plugin' );
+			return __( 'Latest posts', 'jobrodo-theme' );
 		}
 
 		if ( is_archive() ) {
@@ -23,11 +23,11 @@ class Titles {
 		}
 
 		if ( is_search() ) {
-			return sprintf( __( 'Zoekresultaten voor %s', 'jobrodo-plugin' ), get_search_query() );
+			return wp_sprintf( __( 'Search results for %s', 'jobrodo-theme' ), get_search_query() );
 		}
 
 		if ( is_404() ) {
-			return __( 'Niet gevonden', 'jobrodo-plugin' );
+			return __( 'Not found', 'jobrodo-theme' );
 		}
 
 		return get_the_title();
