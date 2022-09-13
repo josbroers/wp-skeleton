@@ -1,0 +1,10 @@
+html,
+body {
+	scroll-behavior: smooth;
+	font-family: var(--wp--preset--font-family--primary-font);
+}
+
+::selection {
+	background-color: var(--wp--preset--colors--blue);
+	color: var(--wp--preset--colors--white);
+}

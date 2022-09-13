@@ -1,0 +1,133 @@
+@use "sass:math";
+@use "sass:list";
+
+$unit-warnings: true !default;
+$global-font-size: 100% !default;
+
+@function strip-unit($num) {
+	@return math.div($num, $num * 0 + 1);
+}
+
+@function rem-calc($values) {
+	$rem-values: ();
+	$count: list.length($values);
+	$base: $global-font-size;
+
+	@if unit($base) == "%" {
+		$base: math.div($base, 100%) * 16px;
+	}
+
+	@if unit($base) == "rem" {
+		$base: strip-unit($base) * 16px;
+	}
+
+	@if $count == 1 {
+		@return -zf-to-rem($values, $base);
+	}
+
+	@for $i from 1 through $count {
+		$rem-values: list.append(
+						$rem-values,
+						-zf-to-rem(list.nth($values, $i), $base)
+		);
+	}
+
+	@return $rem-values;
+}
+
+@function -zf-to-rem($value, $base: null) {
+	@if type-of($value) != "number" {
+		@if $unit-warnings {
+			@warn inspect($value) + " was passed to rem-calc(), which is not a number.";
+		}
+
+		@return $value;
+	}
+
+	@if unit($value) == "em" {
+		$value: strip-unit($value) * 1rem;
+	}
+
+	@if unit($value) != "rem" {
+		$value: math.div(strip-unit($value), strip-unit($base)) * 1rem;
+	}
+
+	@if $value == 0 {
+		$value: 0;
+	}
+
+	@return $value;
+}
+
+@function unitless-calc($value, $base: null) {
+	@if $base == null {
+		$base: $global-font-size;
+	}
+
+	@if unit($base) == "%" {
+		$base: math.div($base, 100%) * 16px;
+	}
+
+	@if unit($base) == "rem" {
+		$base: strip-unit($base) * 16px;
+	}
+
+	@if unit($base) == "em" {
+		$base: strip-unit($base) * 16px;
+	}
+
+	@if unit($value) == "%" {
+		$value: math.div($value, 100%) * $base;
+	}
+
+	@if unit($value) == "rem" {
+		$value: strip-unit($value) * $base;
+	}
+
+	@if unit($value) == "em" {
+		$value: strip-unit($value) * $base;
+	}
+
+	@if unit($value) == "px" {
+		@return math.div(strip-unit($value), strip-unit($base));
+	}
+
+	@if unitless($value) and ($value > 10) {
+		@return math.div($value, strip-unit($base));
+	}
+
+	@return $value;
+}
+
+@function fluid-range($min, $max, $vmin, $vmax) {
+	@if strip-unit($min) == 0 {
+		@error "Property $min must be higher then 0";
+	}
+
+	@if strip-unit($max) == 0 {
+		@error "Property $max must be higher then 0";
+	}
+
+	@if strip-unit($vmin) == 0 {
+		@error "Property $vmin must be higher then 0";
+	}
+
+	@if strip-unit($vmax) == 0 {
+		@error "Property $vmax must be higher then 0";
+	}
+
+	@if strip-unit($min) >= strip-unit($max) {
+		@error "Property $max must be higher than $min";
+	}
+
+	@if strip-unit($vmin) >= strip-unit($vmax) {
+		@error "Property $vmax must be higher than $vmin";
+	}
+
+	$size-difference: strip-unit(rem-calc($max)) - strip-unit(rem-calc($min));
+	$viewport-difference: strip-unit(rem-calc($vmax)) - strip-unit(rem-calc($vmin));
+	$difference-divided: $size-difference / $viewport-difference;
+	$preferred: calc(#{rem-calc($min)} + ((1vw - #{$vmin / 100}) * #{$difference-divided * 100}));
+
+	@return clamp(#{rem-calc($min)}, #{$preferred}, #{rem-calc($max)});
+}

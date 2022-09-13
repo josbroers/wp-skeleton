@@ -20,7 +20,8 @@
     "allow-plugins": {
       "composer/installers": true,
       "johnpbloch/wordpress-core-installer": true,
-      "roots/wordpress-core-installer": true
+      "roots/wordpress-core-installer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
     }
   },
   "repositories": [
@@ -35,15 +36,15 @@
   ],
   "autoload": {
     "psr-0": {
-      "Jobrodo\\Installer": "scripts"
+      "Skeleton\\Installer": "scripts"
     },
     "psr-4": {
-      "Jobrodo\\Theme\\": "web/app/themes/jobrodo/app"
+      "Skeleton\\Theme\\": "web/app/themes/skeleton/app"
     }
   },
   "scripts": {
     "post-install-cmd": [
-      "Jobrodo\\Installer::post_install"
+      "Skeleton\\Installer::post_install"
     ],
     "test": [
       "phpcs"
@@ -68,7 +69,7 @@
     "wpackagist-plugin/akismet": "^5.0"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-latest"
+    "roave/security-advisories": "*"
   },
   "extra": {
     "installer-paths": {
