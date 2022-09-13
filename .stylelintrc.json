@@ -3,14 +3,15 @@
   "rules": {
     "color-hex-length": "long",
     "color-hex-case": "upper",
-    "string-quotes": "single",
     "selector-class-pattern": null,
     "declaration-block-no-redundant-longhand-properties": null,
     "alpha-value-notation": "number",
     "color-function-notation": "legacy",
     "indentation": "tab",
     "max-line-length": null,
+    "custom-property-pattern": null,
     "scss/no-global-function-names": null,
-    "scss/at-if-no-null": null
+    "scss/at-if-no-null": null,
+    "scss/operator-no-newline-after": null
   }
 }

@@ -1,5 +1,6 @@
 {
   "name": "jobrodo-theme",
+  "private": true,
   "license": "MIT",
   "author": "Jos Broers <jos@jobrodo.nl>",
   "browserslist": [
@@ -7,24 +8,18 @@
     "ie 11",
     "not dead"
   ],
-  "jshintConfig": {
-    "esversion": 6
-  },
   "source": [
-    "resources/scripts/app.js",
+    "resources/scripts/app.ts",
     "resources/styles/app.scss"
   ],
   "scripts": {
     "build": "parcel build --no-source-maps",
-    "watch": "parcel watch",
-    "lint": "eslint ./resources/scripts --ext .js && stylelint ./resources/styles/**/*.scss"
+    "watch": "parcel watch"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.3.0",
     "@types/jquery": "^3.5.13",
-    "autoprefixer": "^10.4.2",
     "modern-normalize": "^1.1.0",
-    "parcel": "^2.3.0",
-    "sharp": "^0.30.7"
+    "parcel": "^2.3.0"
   }
 }

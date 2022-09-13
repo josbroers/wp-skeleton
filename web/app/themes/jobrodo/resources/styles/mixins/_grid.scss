@@ -1,4 +1,3 @@
-// Create an equal columns grid
 @function grid-columns-equal($columns) {
 	@return repeat($columns, minmax(0, 1fr));
 }

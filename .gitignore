@@ -13,14 +13,19 @@ web/app/debug.log
 
 !web/app/uploads/.gitkeep
 !web/app/plugins/.gitkeep
-!web/app/plugins/jobrodo
 
 # WordPress
 web/wp
 web/.htaccess
 
 # Logs
+logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
 # Dotenv
 .env
@@ -40,11 +45,19 @@ sql-dump-*.sql
 _old/*
 
 # Misc
-.idea
-.parcel-cache
 dist
 node_modules
-.DS_Store
 Thumbs.db
 npm-debug.log
 nginx.conf
+dist-ssr
+*.local
+.vscode
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.parcel-cache

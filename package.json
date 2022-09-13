@@ -6,8 +6,7 @@
   "scripts": {
     "install": "node scripts/Jobrodo/parcel.js install",
     "build": "node scripts/Jobrodo/parcel.js build",
-    "watch": "node scripts/Jobrodo/parcel.js watch",
-    "lint": "node scripts/Jobrodo/parcel.js lint"
+    "watch": "node scripts/Jobrodo/parcel.js watch"
   },
   "engines": {
     "node": ">= 16"
@@ -17,17 +16,9 @@
     "npm": "8.17.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.10",
-    "@babel/eslint-parser": "^7.17.0",
+    "@wordpress/stylelint-config": "^21.1.0",
     "chalk": "^5.0.1",
-    "eslint": "^8.14.0",
-    "eslint-config-esnext": "^4.1.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "prettier": "^2.6.2",
     "stylelint": "^14.8.2",
-    "stylelint-config-standard": "^25.0.0",
     "stylelint-config-standard-scss": "^3.0.0"
   }
 }

@@ -20,7 +20,8 @@
     "allow-plugins": {
       "composer/installers": true,
       "johnpbloch/wordpress-core-installer": true,
-      "roots/wordpress-core-installer": true
+      "roots/wordpress-core-installer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
     }
   },
   "repositories": [
@@ -68,7 +69,7 @@
     "wpackagist-plugin/akismet": "^5.0"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-latest"
+    "roave/security-advisories": "*"
   },
   "extra": {
     "installer-paths": {

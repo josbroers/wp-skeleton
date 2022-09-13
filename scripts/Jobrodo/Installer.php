@@ -7,7 +7,7 @@ use JsonException;
 class Installer {
 
 	/**
-	 * Global configuration keys for WordPress.
+	 * Global configuration keys for WordPress
 	 *
 	 * @var array|string[]
 	 */
@@ -48,7 +48,7 @@ class Installer {
 	}
 
 	/**
-	 * Create the `.env` file.
+	 * Create the `.env` file
 	 *
 	 * @return void
 	 * @throws JsonException
@@ -64,7 +64,7 @@ class Installer {
 	}
 
 	/**
-	 * Generate the configuration keys.
+	 * Generate the configuration keys
 	 *
 	 * @return void
 	 */
@@ -86,7 +86,7 @@ class Installer {
 	}
 
 	/**
-	 * Generate the salts.
+	 * Generate the salts
 	 *
 	 * @return void
 	 * @throws JsonException
@@ -106,7 +106,7 @@ class Installer {
 	}
 
 	/**
-	 * Check if the wp package 'aaemnnosttv/wp-cli-dotenv-command' is installed.
+	 * Check if the wp package 'aaemnnosttv/wp-cli-dotenv-command' is installed
 	 *
 	 * @return bool
 	 * @throws JsonException
