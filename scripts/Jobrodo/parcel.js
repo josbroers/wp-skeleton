@@ -4,13 +4,15 @@ import { execSync } from "child_process";
 import chalk        from "chalk";
 
 /**
- * Check for correct versions of Node.js and npm.
+ * Check for correct versions of Node.js and npm
  */
 function checkForNode() {
 	// Check version for Node.js
 	try {
-		if ( !execSync( "node -v", { stdio: "pipe" } ).toString().match( /v16\.\d*\.\d*/g ) ) {
-			throw( "Please install Node.js ^16.0" );
+		if ( !execSync( "node -v", { stdio: "pipe" } )
+			.toString()
+			.match( /v16\.\d*\.\d*/g ) ) {
+			throw "Please install Node.js ^16.0";
 		}
 	} catch ( error ) {
 		console.error( `%s - ${error}`, chalk.red.bold( "ERROR" ) );
@@ -19,8 +21,10 @@ function checkForNode() {
 
 	// Check version for npm
 	try {
-		if ( !execSync( "npm -v", { stdio: "pipe" } ).toString().match( /8\.\d*\.\d*/g ) ) {
-			throw( "Please install npm ^8.0" );
+		if ( !execSync( "npm -v", { stdio: "pipe" } )
+			.toString()
+			.match( /8\.\d*\.\d*/g ) ) {
+			throw "Please install npm ^8.0";
 		}
 	} catch ( error ) {
 		console.error( `%s - ${error}`, chalk.red.bold( "ERROR" ) );
@@ -29,7 +33,7 @@ function checkForNode() {
 }
 
 /**
- * Pass arguments into CLI options.
+ * Pass arguments into CLI options
  *
  * @param {*} rawArgs
  * @returns
@@ -43,7 +47,7 @@ function parseArgumentsIntoOptions( rawArgs ) {
 }
 
 /**
- * Execute npm commands.
+ * Execute npm commands
  *
  * @param dirs
  * @param command
@@ -78,7 +82,7 @@ function execute( dirs = [], command = "", stdio = "pipe", infoStart = "", infoE
 }
 
 /**
- * Execute CLI.
+ * Execute CLI
  *
  * @param args
  */
@@ -89,38 +93,13 @@ function cli( args ) {
 
 	switch ( options.type ) {
 		case "install":
-			execute(
-				[ "./web/app/themes/jobrodo" ],
-				"npm ci",
-				"pipe",
-				"Installing dependencies...",
-				"Successfully installed the dependencies"
-			);
+			execute( [ "./web/app/themes/jobrodo" ], "npm ci", "pipe", "Installing dependencies...", "Successfully installed the dependencies" );
 			break;
 		case "build":
-			execute(
-				[ "./web/app/themes/jobrodo" ],
-				"npm run build",
-				"pipe",
-				"Building the packages",
-				"Successfully build the packages"
-			);
+			execute( [ "./web/app/themes/jobrodo" ], "npm run build", "pipe", "Building the packages", "Successfully build the packages" );
 			break;
 		case "watch":
-			execute(
-				[ "./web/app/themes/jobrodo" ],
-				"npm run watch",
-				"inherit",
-				"Watching the theme"
-			);
-			break;
-		case "lint":
-			execute( [
-					"./web/app/themes/jobrodo" ],
-				"npm run lint",
-				"inherit",
-				"Linting the files"
-			);
+			execute( [ "./web/app/themes/jobrodo" ], "npm run watch", "inherit", "Watching the theme" );
 			break;
 		default:
 			console.error( "%s - Please pass one of the following options: install, build or watch", chalk.red.bold( "ERROR" ) );

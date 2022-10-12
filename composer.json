@@ -20,7 +20,8 @@
     "allow-plugins": {
       "composer/installers": true,
       "johnpbloch/wordpress-core-installer": true,
-      "roots/wordpress-core-installer": true
+      "roots/wordpress-core-installer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
     }
   },
   "repositories": [
@@ -38,7 +39,7 @@
       "Jobrodo\\Installer": "scripts"
     },
     "psr-4": {
-      "Jobrodo\\Plugin\\": "web/app/plugins/jobrodo/src"
+      "Jobrodo\\Theme\\": "web/app/themes/jobrodo/app"
     }
   },
   "scripts": {
@@ -62,14 +63,13 @@
     "wpackagist-plugin/simple-page-ordering": "^2.4",
     "wpackagist-plugin/ewww-image-optimizer": "^6.7",
     "wpackagist-plugin/duplicate-post": "^4.5",
-    "monolog/monolog": "^2.8",
     "wpackagist-plugin/mailin": "^3.1",
     "wpackagist-plugin/acf-better-search": "^4.0",
     "wpackagist-plugin/rocket-lazy-load": "^2.3",
     "wpackagist-plugin/akismet": "^5.0"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-latest"
+    "roave/security-advisories": "*"
   },
   "extra": {
     "installer-paths": {

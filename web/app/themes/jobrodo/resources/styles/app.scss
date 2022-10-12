@@ -1,12 +1,7 @@
-// Reset browser styles
-@import '../../node_modules/modern-normalize/modern-normalize.css';
+@import "../../node_modules/modern-normalize/modern-normalize.css";
 
-// Base styles
-@import 'base';
+@import "base";
+@import "common/global";
 
-// Global styles
-@import 'common/global';
-
-// Component styles
-@import 'components/container';
-@import 'components/button';
+@import "../../components/container/container";
+@import "../../components/link/button";
