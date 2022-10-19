@@ -11,9 +11,7 @@
 		"npm": "8.17.0"
 	},
 	"browserslist": [
-		"> 5%",
-		"ie 11",
-		"not dead"
+		"defaults"
 	],
 	"scripts": {
 		"dev": "vite",
