@@ -1,49 +1,46 @@
 #!/usr/bin/env Node
-
 /* eslint-disable no-console,no-unused-vars */
 
 import { execSync } from 'child_process'
 import chalk from 'chalk'
 
-/**
- * Check for correct versions of Node.js and npm
- */
-function checkForNode() {
-	// Check version for Node.js
-	try {
-		if (
-			!execSync('node -v', { stdio: 'pipe' })
-				.toString()
-				.match(/v16\.\d*\.\d*/g)
-		) {
-			throw new Error('Please install Node.js ^16.0')
-		}
-	} catch (error) {
-		console.error(`%s - ${error}`, chalk.red.bold('ERROR'))
-		process.exit(1)
-	}
+const currentPath = process.cwd()
 
-	// Check version for npm
-	try {
-		if (
-			!execSync('npm -v', { stdio: 'pipe' })
-				.toString()
-				.match(/8\.\d*\.\d*/g)
-		) {
-			throw 'Please install npm ^8.0'
-		}
-	} catch (error) {
-		console.error(`%s - ${error}`, chalk.red.bold('ERROR'))
-		process.exit(1)
+/**
+ * Check for correct version of Node.js
+ */
+function checkNodeVersion() {
+	if (
+		!execSync('node -v', { stdio: 'pipe' })
+			.toString()
+			.match(/v16\.\d*\.\d*/g)
+	) {
+		throw 'Please install Node.js ^16.0'
 	}
 }
 
 /**
- * Pass arguments into CLI options
- *
- * @param {unknown} rawArgs
+ * Check for correct version of npm
  */
-function parseArgumentsIntoOptions(rawArgs) {
+function checkNpmVersion() {
+	if (
+		!execSync('npm -v', { stdio: 'pipe' })
+			.toString()
+			.match(/8\.\d*\.\d*/g)
+	) {
+		throw 'Please install npm ^8.0'
+	}
+}
+
+/**
+ * Executes the script
+ *
+ * @return {Promise<{type: string}>} Pass arguments into CLI options
+ */
+async function main() {
+	await checkNodeVersion()
+	await checkNpmVersion()
+
 	const args = process.argv.slice(2)
 
 	return {
@@ -60,23 +57,18 @@ function parseArgumentsIntoOptions(rawArgs) {
  * @param {string}        infoEnd
  */
 function execute(dirs = [], command = '', infoStart = '', infoEnd = '') {
-	if (infoStart) {
-		console.log(`%s - ${infoStart}`, chalk.cyan.bold('INFO'))
-	}
-
 	dirs.forEach((dir, index) => {
+		if (infoStart) {
+			console.log(`%s - ${infoStart} ${dir}...`, chalk.cyan.bold('INFO'))
+		}
+
 		if (index !== 0) {
-			process.chdir('../../../../')
+			process.chdir(currentPath)
 		}
 
 		if (command) {
-			try {
-				process.chdir(dir)
-				execSync(command)
-			} catch (error) {
-				console.error(`%s - ${error}`)
-				process.exit(1)
-			}
+			process.chdir(dir)
+			execSync(command, { stdio: 'inherit' })
 		}
 	})
 
@@ -85,50 +77,45 @@ function execute(dirs = [], command = '', infoStart = '', infoEnd = '') {
 	}
 }
 
-/**
- * Execute CLI
- *
- * @param {unknown} args
- */
-function cli(args) {
-	checkForNode()
-
-	const options = parseArgumentsIntoOptions(args)
-
-	switch (options.type) {
-		case 'install':
-			execute(
-				['./web/app/themes/skeleton'],
-				'npm ci',
-				'Installing dependencies...',
-				'Successfully installed the dependencies'
-			)
-			break
-		case 'build':
-			execute(
-				['./web/app/themes/skeleton'],
-				'npm run build',
-				'Building for production...',
-				'Successfully build the packages'
-			)
-			break
-		case 'dev':
-			execute(['./web/app/themes/skeleton'], 'npm run dev', 'Start dev server...')
-			break
-		case 'preview':
-			execute(
-				['./web/app/themes/skeleton'],
-				'npm run preview',
-				'Locally preview production build'
-			)
-			break
-		default:
-			console.error(
-				'%s - Please pass one of the following options: install, build, dev or preview',
-				chalk.red.bold('ERROR')
-			)
-			process.exit(1)
-	}
-}
-
-cli(process.argv)
+main()
+	.then(function (options) {
+		switch (options.type) {
+			case 'install':
+				execute(
+					['web/app/themes/skeleton'],
+					'npm ci',
+					'Installing dependencies for',
+					'Successfully installed the dependencies'
+				)
+				break
+			case 'build':
+				execute(
+					['web/app/themes/skeleton'],
+					'npm run build',
+					'Building for production for',
+					'Successfully build the packages'
+				)
+				break
+			case 'watch':
+				execute(
+					['web/app/themes/skeleton'],
+					'npm run watch',
+					'Start development server and watch for changes for'
+				)
+				break
+			case 'lint':
+				execute(
+					['web/app/themes/skeleton'],
+					'npm run lint',
+					'Testing code for',
+					'Code looks fine!'
+				)
+				break
+			default:
+				throw 'Please pass one of the following options: install, build or watch'
+		}
+	})
+	.catch(function (e) {
+		console.error(`%s - ${e}`, chalk.red.bold('ERROR'))
+		process.exit(1)
+	})

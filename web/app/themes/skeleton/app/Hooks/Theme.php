@@ -45,9 +45,13 @@ class Theme {
 			'script',
 			'style',
 		] );
+
 		remove_theme_support( 'widgets-block-editor' );
+
 		load_theme_textdomain( 'skeleton-theme', get_template_directory() . '/languages' );
-		add_editor_style( ( new Assets() )->asset_path( 'resources/scss/main.scss' ) );
+
+		add_editor_style( ( new Assets() )->asset_path( 'scss/main.scss' ) );
+
 		register_nav_menus( [
 			'primary_navigation' => __( 'Primary navigation', 'skeleton-theme' ),
 		] );

@@ -1,20 +1,80 @@
 {
-  "extends": [
-    "stylelint-config-standard-scss",
-    "@wordpress/stylelint-config"
-  ],
-  "rules": {
-    "color-hex-length": "long",
-    "color-hex-case": "upper",
-    "selector-class-pattern": null,
-    "declaration-block-no-redundant-longhand-properties": null,
-    "alpha-value-notation": "number",
-    "color-function-notation": "legacy",
-    "indentation": "tab",
-    "max-line-length": null,
-    "custom-property-pattern": null,
-    "scss/no-global-function-names": null,
-    "scss/at-if-no-null": null,
-    "scss/operator-no-newline-after": null
-  }
+	"extends": [
+		"stylelint-config-standard-scss",
+		"@wordpress/stylelint-config"
+	],
+	"rules": {
+		"color-hex-length": "long",
+		"color-hex-case": "upper",
+		"selector-class-pattern": null,
+		"declaration-block-no-redundant-longhand-properties": null,
+		"alpha-value-notation": "number",
+		"color-function-notation": "legacy",
+		"indentation": "tab",
+		"max-line-length": null,
+		"custom-property-pattern": null,
+		"scss/no-global-function-names": null,
+		"scss/at-if-no-null": null,
+		"scss/operator-no-newline-after": null,
+		"at-rule-empty-line-before": [
+			"always",
+			{
+				"ignoreAtRules": [
+					"function",
+					"if",
+					"each",
+					"include",
+					"mixin",
+					"use",
+					"error",
+					"media",
+					"for",
+					"else",
+					"warn",
+					"import",
+					"return"
+				]
+			}
+		],
+		"block-closing-brace-newline-after": [
+			"always",
+			{
+				"ignoreAtRules": [
+					"function",
+					"if",
+					"each",
+					"include",
+					"mixin",
+					"use",
+					"error",
+					"media",
+					"for",
+					"else",
+					"warn",
+					"import",
+					"return"
+				]
+			}
+		],
+		"at-rule-no-unknown": [
+			true,
+			{
+				"ignoreAtRules": [
+					"function",
+					"if",
+					"each",
+					"include",
+					"mixin",
+					"use",
+					"error",
+					"media",
+					"for",
+					"else",
+					"warn",
+					"import",
+					"return"
+				]
+			}
+		]
+	}
 }

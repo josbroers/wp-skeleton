@@ -2,38 +2,20 @@
 
 namespace Skeleton\Theme;
 
-use Skeleton\Theme\Hooks\Acf;
-use Skeleton\Theme\Hooks\Feeds;
-use Skeleton\Theme\Hooks\Media;
-use Skeleton\Theme\Hooks\Theme;
-use Skeleton\Theme\Lib\Wrapper;
-use Skeleton\Theme\Hooks\Enqueue;
-use Skeleton\Theme\Hooks\Widgets;
-use Skeleton\Theme\Hooks\PostTypes;
-use Skeleton\Theme\Hooks\Taxonomies;
+use Skeleton\Theme\Hooks\Hooks;
+use Skeleton\Theme\Lib\Lib;
+use Skeleton\Theme\Queries\Query;
 
 class App {
 
-	public Acf        $acf;
-	public Enqueue    $enqueue;
-	public Theme      $theme;
-	public Media      $media;
-	public PostTypes  $post_type;
-	public Taxonomies $taxonomies;
-	public Feeds      $feeds;
-	public Widgets    $widgets;
+	public Hooks $hooks;
+	public Lib   $lib;
+	public Query $query;
 
 	public function __construct() {
-		$this->acf        = new Acf();
-		$this->enqueue    = new Enqueue();
-		$this->theme      = new Theme();
-		$this->media      = new Media();
-		$this->post_type  = new PostTypes();
-		$this->taxonomies = new Taxonomies();
-		$this->feeds      = new Feeds();
-		$this->widgets    = new Widgets();
-
-		( new Wrapper() )->template_include();
+		$this->hooks = new Hooks();
+		$this->lib   = new Lib();
+		$this->query = new Query();
 	}
 
 }

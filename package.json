@@ -6,8 +6,8 @@
 	"scripts": {
 		"install": "node scripts/Skeleton/node.js install",
 		"build": "node scripts/Skeleton/node.js build",
-		"dev": "node scripts/Skeleton/node.js dev",
-		"watch": "node scripts/Skeleton/node.js watch"
+		"watch": "node scripts/Skeleton/node.js watch",
+		"lint": "node scripts/Skeleton/node.js lint"
 	},
 	"engines": {
 		"node": ">= 16"
