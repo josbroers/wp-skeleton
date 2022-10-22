@@ -5,6 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"install": "node scripts/Skeleton/node.js install",
+		"clone-submodules": "git pull --recurse-submodules && git submodule update --recursive",
 		"build": "node scripts/Skeleton/node.js build",
 		"watch": "node scripts/Skeleton/node.js watch",
 		"lint": "node scripts/Skeleton/node.js lint"

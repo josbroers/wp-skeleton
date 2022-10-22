@@ -37,14 +37,13 @@ class Installer {
 		self::$root = dirname( __DIR__, 2 );
 		self::$io   = $event->getIO();
 
-		if (
-			! self::$io->isInteractive() ||
-			! self::$io->askConfirmation( '<info>Create the `.env` file?</> [<comment>Y,n</>]? ', false )
-		) {
+		if ( ! self::$io->isInteractive() ) {
 			return;
 		}
 
-		self::create_env_file();
+		if ( self::$io->askConfirmation( '<info>Create the `.env` file?</> [<comment>Y,n</>]? ', true ) ) {
+			self::create_env_file();
+		}
 	}
 
 	/**
