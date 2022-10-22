@@ -36,15 +36,15 @@
   ],
   "autoload": {
     "psr-0": {
-      "Jobrodo\\Installer": "scripts"
+      "Skeleton\\Installer": "scripts"
     },
     "psr-4": {
-      "Jobrodo\\Theme\\": "web/app/themes/jobrodo/app"
+      "Skeleton\\Theme\\": "web/app/themes/skeleton/app"
     }
   },
   "scripts": {
     "post-install-cmd": [
-      "Jobrodo\\Installer::post_install"
+      "Skeleton\\Installer::post_install"
     ],
     "test": [
       "phpcs"

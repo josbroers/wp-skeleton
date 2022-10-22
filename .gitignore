@@ -46,6 +46,7 @@ _old/*
 
 # Misc
 dist
+build
 node_modules
 Thumbs.db
 npm-debug.log
@@ -60,4 +61,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.parcel-cache

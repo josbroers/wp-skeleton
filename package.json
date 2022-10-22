@@ -1,24 +1,30 @@
 {
-  "name": "wp-skeleton",
-  "license": "MIT",
-  "author": "Jos Broers <jos@jobrodo.nl>",
-  "type": "module",
-  "scripts": {
-    "install": "node scripts/Jobrodo/parcel.js install",
-    "build": "node scripts/Jobrodo/parcel.js build",
-    "watch": "node scripts/Jobrodo/parcel.js watch"
-  },
-  "engines": {
-    "node": ">= 16"
-  },
-  "volta": {
-    "node": "16.16.0",
-    "npm": "8.17.0"
-  },
-  "devDependencies": {
-    "@wordpress/stylelint-config": "^21.1.0",
-    "chalk": "^5.0.1",
-    "stylelint": "^14.8.2",
-    "stylelint-config-standard-scss": "^3.0.0"
-  }
+	"name": "wp-skeleton",
+	"license": "MIT",
+	"author": "Jos Broers <jos@jobrodo.nl>",
+	"type": "module",
+	"scripts": {
+		"install": "node scripts/Skeleton/node.js install",
+		"build": "node scripts/Skeleton/node.js build",
+		"watch": "node scripts/Skeleton/node.js watch",
+		"lint": "node scripts/Skeleton/node.js lint"
+	},
+	"engines": {
+		"node": ">= 16"
+	},
+	"volta": {
+		"node": "16.16.0",
+		"npm": "8.17.0"
+	},
+	"devDependencies": {
+		"@types/jquery": "^3.5.13",
+		"@types/node": "^18.11.2",
+		"@wordpress/eslint-plugin": "^13.4.0",
+		"@wordpress/stylelint-config": "^21.1.0",
+		"chalk": "^5.0.1",
+		"eslint": "^8.25.0",
+		"prettier": "^2.7.1",
+		"stylelint": "^14.8.2",
+		"stylelint-config-standard-scss": "^3.0.0"
+	}
 }
