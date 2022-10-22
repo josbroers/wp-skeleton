@@ -45,9 +45,6 @@
   "scripts": {
     "post-install-cmd": [
       "Skeleton\\Installer::post_install"
-    ],
-	  "post-create-project-cmd": [
-      "Skeleton\\Installer::post_install"
     ]
   },
   "require": {
