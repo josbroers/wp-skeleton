@@ -1,5 +1,7 @@
 # WordPress Skeleton
 
+![Packagist](https://img.shields.io/packagist/v/jobrodo/wp-skeleton)
+
 A skeleton for WordPress bootstrapped with [Bedrock](https://roots.io/bedrock/). It has the following features:
 
 - [ESLint](https://eslint.org/)
@@ -64,8 +66,8 @@ all the files to their JavaScript equivalent (`.js`) and uninstall TypeScript.
 
 ## 3. Styling
 
-There are a lot of options to style your projects. This skeleton uses a global stylesheet with [Sass](https://sass-lang.com/), **[Modern Normalize](https://www.npmjs.com/package/modern-normalize/)** and some unit functions inspired
-by **[Foundation sites](https://get.foundation/sites/docs/sass-functions.html)**, but use whatever works best for you.
+There are a lot of options to style your projects. This skeleton uses a global stylesheet with [Sass](https://sass-lang.com/), [Modern Normalize](https://www.npmjs.com/package/modern-normalize/) and some unit functions inspired
+by [Foundation sites](https://get.foundation/sites/docs/sass-functions.html), but use whatever works best for you.
 For example:
 
 - [Material-UI](https://mui.com/)
