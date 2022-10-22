@@ -8,8 +8,8 @@
  * can.
  */
 
-use Roots\WPConfig\Config;
 use function Env\env;
+use Roots\WPConfig\Config;
 
 // Directory containing all the site's files
 $root_dir = dirname( __DIR__ );
