@@ -4,14 +4,16 @@
 	"author": "Jos Broers <jos@jobrodo.nl>",
 	"type": "module",
 	"scripts": {
-		"install": "node scripts/Skeleton/node.js install",
 		"clone-submodules": "git pull --recurse-submodules && git submodule update --recursive",
-		"build": "node scripts/Skeleton/node.js build",
-		"watch": "node scripts/Skeleton/node.js watch",
-		"lint": "node scripts/Skeleton/node.js lint"
+		"update": "npx npm-check -u",
+		"node": "node scripts/Skeleton/node.js",
+		"install": "npm run node install",
+		"build": "npm run node build",
+		"watch": "npm run node watch",
+		"lint": "npm run node lint"
 	},
 	"engines": {
-		"node": ">= 16"
+		"node": "^16.0"
 	},
 	"volta": {
 		"node": "16.16.0",

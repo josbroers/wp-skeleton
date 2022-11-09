@@ -5,6 +5,7 @@
 				'flexible-content-wrapper',
 				'flexible-content-wrapper--' . get_row_layout(),
 			]; ?>
+
 			<div class="<?= implode( ' ', $flexible_content_classes ) ?>">
 				<?php get_template_part( 'templates/flexible-content/' . get_row_layout() ); ?>
 			</div>

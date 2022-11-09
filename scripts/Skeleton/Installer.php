@@ -6,11 +6,6 @@ use JsonException;
 
 class Installer {
 
-	/**
-	 * Global configuration keys for WordPress
-	 *
-	 * @var array|string[]
-	 */
 	private static array $KEYS = [
 		'DB_NAME',
 		'DB_USER',
@@ -24,13 +19,6 @@ class Installer {
 	private static $io;
 
 	/**
-	 * Install command for Composer and create `.env` file if:
-	 * - IO is interactive
-	 * - The client gave confirmation
-	 *
-	 * @param $event
-	 *
-	 * @return void
 	 * @throws JsonException
 	 */
 	public static function post_install( $event ): void {
@@ -47,9 +35,6 @@ class Installer {
 	}
 
 	/**
-	 * Create the `.env` file
-	 *
-	 * @return void
 	 * @throws JsonException
 	 */
 	private static function create_env_file(): void {
@@ -62,11 +47,6 @@ class Installer {
 		self::generate_salts();
 	}
 
-	/**
-	 * Generate the configuration keys
-	 *
-	 * @return void
-	 */
 	private static function generate_keys(): void {
 		$config_vars = array_map( static function ( $key ) {
 			$input = self::$io->ask( "<fg=cyan>What is the value of {$key}?</> ", '' );
@@ -85,9 +65,6 @@ class Installer {
 	}
 
 	/**
-	 * Generate the salts
-	 *
-	 * @return void
 	 * @throws JsonException
 	 */
 	private static function generate_salts(): void {
@@ -105,9 +82,6 @@ class Installer {
 	}
 
 	/**
-	 * Check if the wp package 'aaemnnosttv/wp-cli-dotenv-command' is installed
-	 *
-	 * @return bool
 	 * @throws JsonException
 	 */
 	private static function check_for_dotenv(): bool {

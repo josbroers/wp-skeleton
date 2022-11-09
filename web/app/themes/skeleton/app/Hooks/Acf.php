@@ -22,16 +22,13 @@ class Acf {
 		$this->options  = new Options();
 	}
 
-	/**
-	 * Check if ACF is activated when switching to theme
-	 */
 	public function action__after_switch_theme( string $old_theme_name, WP_Theme $old_theme ): void {
 		if ( ! class_exists( 'acf' ) ) : ?>
-            <div class="notice notice-error is-dismissible">
-                <p style="font-size: 2em;">
+			<div class="notice notice-error is-dismissible">
+				<p style="font-size: 2em;">
 					<?= wp_sprintf( '<b>%s</b> %s', __( 'NOTE:', 'skeleton-theme' ), __( 'First activate the ACF plugin.', 'skeleton-theme' ) ) ?>
-                </p>
-            </div>
+				</p>
+			</div>
 			<?php switch_theme( $old_theme->get_stylesheet() ); ?>
 		<?php endif;
 	}

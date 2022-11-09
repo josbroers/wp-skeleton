@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Voorbeeld layout
+Template Name: Example layout
 Template Post Type: page
 */
 
@@ -38,7 +38,8 @@ $blogname = get_option( 'blogname' );
 
 <div class="layout">
 	<div class="container">
-		<h1> Welcome to the<br/>
+		<h1>
+			Welcome to the<br/>
 			<?php get_template_part( 'components/link/link', null, [
 				'title'   => "{$blogname} on GitHub",
 				'content' => "{$blogname}!",

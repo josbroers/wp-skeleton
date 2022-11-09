@@ -9,6 +9,7 @@ use function Skeleton\Theme\Lib\template_path;
 <?php get_template_part( 'templates/head' ); ?>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+
 <?php get_template_part( 'components/header' ); ?>
 
 <main>

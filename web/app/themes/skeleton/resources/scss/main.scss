@@ -1,5 +1,12 @@
+/* Reset default styles */
 @import "modern-normalize/modern-normalize.css";
+
+/* Base */
 @import "base";
+
+/* Global */
 @import "common/global";
+
+/* Components */
 @import "../../components/container/container";
-@import "../../components/link/button";
+@import "../../components/link/link";

@@ -1,85 +1,85 @@
 {
-  "name": "jobrodo/wp-skeleton",
-  "type": "project",
-  "license": "MIT",
-  "description": "WordPress Skeleton",
-  "homepage": "https://www.jobrodo.nl/",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "authors": [
-    {
-      "name": "Jos Broers",
-      "email": "jos@jobrodo.nl",
-      "homepage": "https://github.com/jos-broers"
-    }
-  ],
-  "config": {
-    "preferred-install": "dist",
-    "generate-salts": true,
-    "remove-default-content-dir": true,
-    "allow-plugins": {
-      "composer/installers": true,
-      "johnpbloch/wordpress-core-installer": true,
-      "roots/wordpress-core-installer": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true
-    }
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org",
-      "only": [
-        "wpackagist-plugin/*",
-        "wpackagist-theme/*"
-      ]
-    }
-  ],
-  "autoload": {
-    "psr-0": {
-      "Skeleton\\Installer": "scripts"
-    },
-    "psr-4": {
-      "Skeleton\\Theme\\": "web/app/themes/skeleton/app"
-    }
-  },
-  "scripts": {
-    "post-install-cmd": [
-      "Skeleton\\Installer::post_install"
-    ]
-  },
-  "require": {
-    "php": ">=8.0",
-    "composer/installers": "^2.1",
-    "vlucas/phpdotenv": "^5.4",
-    "oscarotero/env": "^2.1",
-    "roots/wordpress": "^6.0",
-    "roots/bedrock-autoloader": "^1.0",
-    "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wp-config": "1.0.0",
-    "roots/wp-password-bcrypt": "1.1.0",
-    "wpackagist-plugin/simple-page-ordering": "^2.4",
-    "wpackagist-plugin/ewww-image-optimizer": "^6.7",
-    "wpackagist-plugin/duplicate-post": "^4.5",
-    "wpackagist-plugin/mailin": "^3.1",
-    "wpackagist-plugin/acf-better-search": "^4.0",
-    "wpackagist-plugin/rocket-lazy-load": "^2.3",
-    "wpackagist-plugin/akismet": "^5.0"
-  },
-  "require-dev": {
-    "roave/security-advisories": "dev-latest"
-  },
-  "extra": {
-    "installer-paths": {
-      "web/app/mu-plugins/{$name}/": [
-        "type:wordpress-muplugin"
-      ],
-      "web/app/plugins/{$name}/": [
-        "type:wordpress-plugin"
-      ],
-      "web/app/themes/{$name}/": [
-        "type:wordpress-theme"
-      ]
-    },
-    "wordpress-install-dir": "web/wp"
-  }
+	"name": "jobrodo/wp-skeleton",
+	"type": "project",
+	"license": "MIT",
+	"description": "WordPress Skeleton",
+	"homepage": "https://www.jobrodo.nl/",
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"authors": [
+		{
+			"name": "Jos Broers",
+			"email": "jos@jobrodo.nl",
+			"homepage": "https://github.com/jos-broers"
+		}
+	],
+	"config": {
+		"preferred-install": "dist",
+		"generate-salts": true,
+		"remove-default-content-dir": true,
+		"allow-plugins": {
+			"composer/installers": true,
+			"johnpbloch/wordpress-core-installer": true,
+			"roots/wordpress-core-installer": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org",
+			"only": [
+				"wpackagist-plugin/*",
+				"wpackagist-theme/*"
+			]
+		}
+	],
+	"autoload": {
+		"psr-0": {
+			"Skeleton\\Installer": "scripts"
+		},
+		"psr-4": {
+			"Skeleton\\Theme\\": "web/app/themes/skeleton/app"
+		}
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"Skeleton\\Installer::post_install"
+		]
+	},
+	"require": {
+		"php": "^8.0",
+		"composer/installers": "^2.2",
+		"vlucas/phpdotenv": "^5.5",
+		"oscarotero/env": "^2.1",
+		"roots/wordpress": "^6.0",
+		"roots/bedrock-autoloader": "^1.0",
+		"roots/bedrock-disallow-indexing": "^2.0",
+		"roots/wp-config": "1.0",
+		"roots/wp-password-bcrypt": "1.1",
+		"wpackagist-plugin/simple-page-ordering": "^2.4",
+		"wpackagist-plugin/ewww-image-optimizer": "^6.9",
+		"wpackagist-plugin/duplicate-post": "^4.5",
+		"wpackagist-plugin/mailin": "^3.1",
+		"wpackagist-plugin/acf-better-search": "^4.0",
+		"wpackagist-plugin/rocket-lazy-load": "^2.3",
+		"wpackagist-plugin/akismet": "^5.0"
+	},
+	"require-dev": {
+		"roave/security-advisories": "dev-latest"
+	},
+	"extra": {
+		"installer-paths": {
+			"web/app/mu-plugins/{$name}/": [
+				"type:wordpress-muplugin"
+			],
+			"web/app/plugins/{$name}/": [
+				"type:wordpress-plugin"
+			],
+			"web/app/themes/{$name}/": [
+				"type:wordpress-theme"
+			]
+		},
+		"wordpress-install-dir": "web/wp"
+	}
 }

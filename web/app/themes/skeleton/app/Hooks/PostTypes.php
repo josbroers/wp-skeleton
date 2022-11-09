@@ -36,9 +36,6 @@ class PostTypes {
 		remove_post_type_support( 'page', 'editor' );
 	}
 
-	/**
-	 * Redirect to admin URL when visiting post type post
-	 */
 	public function action__redirect(): void {
 		if ( ( $_REQUEST['post_type'] ?? 'post' ) === 'post' && ( ! isset( $_REQUEST['post'] ) || get_post_type( $_REQUEST['post'] ) === 'post' ) ) {
 			wp_safe_redirect( admin_url( '/' ) );

@@ -6,9 +6,6 @@ import chalk from 'chalk'
 
 const currentPath = process.cwd()
 
-/**
- * Check for correct version of Node.js
- */
 function checkNodeVersion() {
 	if (
 		!execSync('node -v', { stdio: 'pipe' })
@@ -19,9 +16,6 @@ function checkNodeVersion() {
 	}
 }
 
-/**
- * Check for correct version of npm
- */
 function checkNpmVersion() {
 	if (
 		!execSync('npm -v', { stdio: 'pipe' })
@@ -32,11 +26,6 @@ function checkNpmVersion() {
 	}
 }
 
-/**
- * Executes the script
- *
- * @return {Promise<{type: string}>} Pass arguments into CLI options
- */
 async function main() {
 	await checkNodeVersion()
 	await checkNpmVersion()
@@ -48,14 +37,6 @@ async function main() {
 	}
 }
 
-/**
- * Execute npm commands
- *
- * @param {Array<string>} dirs
- * @param {string}        command
- * @param {string}        infoStart
- * @param {string}        infoEnd
- */
 function execute(dirs = [], command = '', infoStart = '', infoEnd = '') {
 	dirs.forEach((dir, index) => {
 		if (infoStart) {

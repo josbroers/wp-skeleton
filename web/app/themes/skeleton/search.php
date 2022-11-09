@@ -3,6 +3,7 @@
 		<div>
 			<?= __( 'Sorry, no results found.', 'skeleton-theme' ) ?>
 		</div>
+
 		<?php get_search_form(); ?>
 	<?php endif; ?>
 

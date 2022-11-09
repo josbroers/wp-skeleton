@@ -14,11 +14,9 @@ class Settings {
 		add_action( 'load-post.php', [ $this, 'action__redirect' ] );
 	}
 
-	/**
-	 * Redirect to admin URL on non-development environments
-	 */
 	public function action__redirect(): void {
 		$screen = get_current_screen();
+
 		if ( $screen && isset( $screen->post_type ) && 'acf-field-group' === $screen->post_type ) {
 			wp_redirect( admin_url() );
 			exit;

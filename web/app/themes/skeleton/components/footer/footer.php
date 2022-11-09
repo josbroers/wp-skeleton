@@ -1,4 +1,3 @@
-<?php
-
-do_action( 'get_footer' );
-wp_footer();
+<?php do_action( 'get_footer' ); ?>
+<footer></footer>
+<?php wp_footer(); ?>

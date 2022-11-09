@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @var array $args
  */
@@ -20,9 +19,14 @@ $args = wp_parse_args( array_filter( $args ), $default_args );
 
 ?>
 
-<a href="<?= $args['href'] ?>" class="<?= $args['class'] ?>" title="<?= $args['title'] ?>"
+<a
+	href="<?= $args['href'] ?>"
+	class="<?= $args['class'] ?>"
+	title="<?= $args['title'] ?>"
 	<?= ! empty( $args['target'] ) ? "target='{$args['target']}'" : '' ?>
+
 	<?= ! empty( $args['id'] ) ? "id='{$args['id']}'" : '' ?>
+
 	<?php if ( $args['target'] === '_blank' && empty( $args['rel'] ) ) : ?>
 		<?= 'rel="noopener noreferrer"' ?>
 	<?php elseif ( ! empty( $args['rel'] ) ): ?>
