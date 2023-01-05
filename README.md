@@ -9,11 +9,6 @@ A skeleton for WordPress bootstrapped with [Bedrock](https://roots.io/bedrock/).
 - [Prettier](https://prettier.io/)
 - [Sass](https://sass-lang.com/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [ACF](https://www.advancedcustomfields.com/)
-- [Gravity Forms](https://www.gravityforms.com/)
-- [Permalink Manager Pro](https://permalinkmanager.pro/)
-- [WP Rocket](https://wp-rocket.me/)
-- [Rank Math Pro](https://rankmath.com/)
 
 ## Table of contents
 
@@ -47,9 +42,6 @@ After installing the project you need to fire the following commands to get your
 ```bash
 # Install packages and build the resources
 npm install && npm run build
-
-# Clone the submodules
-npm run clone-submodules
 ```
 
 ### 1.3 TypeScript

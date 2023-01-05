@@ -60,10 +60,12 @@
 		"wpackagist-plugin/simple-page-ordering": "^2.4",
 		"wpackagist-plugin/ewww-image-optimizer": "^6.9",
 		"wpackagist-plugin/duplicate-post": "^4.5",
-		"wpackagist-plugin/mailin": "^3.1",
 		"wpackagist-plugin/acf-better-search": "^4.0",
-		"wpackagist-plugin/rocket-lazy-load": "^2.3",
-		"wpackagist-plugin/akismet": "^5.0"
+		"wpackagist-plugin/akismet": "^5.0",
+		"wpackagist-plugin/w3-total-cache": "^2.2",
+		"wpackagist-plugin/ninja-forms": "^3.6",
+		"wpackagist-plugin/wordpress-seo": "^19.13",
+		"wpackagist-plugin/wp-mail-smtp": "^3.7"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-latest"
