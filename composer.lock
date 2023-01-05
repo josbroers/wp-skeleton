@@ -4,41 +4,43 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "29a73ec03aee12f734056ddc758f9544",
+    "content-hash": "f77696855d199319f23b11e60105ca87",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v2.2.0",
+            "version": "v1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35"
+                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/c29dc4b93137acb82734f672c37e029dfbd95b35",
-                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35",
+                "url": "https://api.github.com/repos/composer/installers/zipball/d20a64ed3c94748397ff5973488761b22f6d3f19",
+                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.0 || ^2.0",
-                "php": "^7.2 || ^8.0"
+                "composer-plugin-api": "^1.0 || ^2.0"
+            },
+            "replace": {
+                "roundcube/plugin-installer": "*",
+                "shama/baton": "*"
             },
             "require-dev": {
                 "composer/composer": "1.6.* || ^2.0",
                 "composer/semver": "^1 || ^3",
                 "phpstan/phpstan": "^0.12.55",
                 "phpstan/phpstan-phpunit": "^0.12.16",
-                "symfony/phpunit-bridge": "^5.3",
-                "symfony/process": "^5"
+                "symfony/phpunit-bridge": "^4.2 || ^5",
+                "symfony/process": "^2.3"
             },
             "type": "composer-plugin",
             "extra": {
                 "class": "Composer\\Installers\\Plugin",
                 "branch-alias": {
-                    "dev-main": "2.x-dev"
-                },
-                "plugin-modifies-install-path": true
+                    "dev-main": "1.x-dev"
+                }
             },
             "autoload": {
                 "psr-4": {
@@ -59,6 +61,7 @@
             "description": "A multi-framework Composer library installer",
             "homepage": "https://composer.github.io/installers/",
             "keywords": [
+                "Craft",
                 "Dolibarr",
                 "Eliasis",
                 "Hurad",
@@ -79,6 +82,7 @@
                 "Whmcs",
                 "WolfCMS",
                 "agl",
+                "aimeos",
                 "annotatecms",
                 "attogram",
                 "bitrix",
@@ -97,6 +101,7 @@
                 "grav",
                 "installer",
                 "itop",
+                "joomla",
                 "known",
                 "kohana",
                 "laravel",
@@ -105,7 +110,6 @@
                 "magento",
                 "majima",
                 "mako",
-                "matomo",
                 "mediawiki",
                 "miaoxing",
                 "modulework",
@@ -125,7 +129,9 @@
                 "silverstripe",
                 "sydes",
                 "sylius",
+                "symfony",
                 "tastyigniter",
+                "typo3",
                 "wordpress",
                 "yawik",
                 "zend",
@@ -133,7 +139,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/installers/issues",
-                "source": "https://github.com/composer/installers/tree/v2.2.0"
+                "source": "https://github.com/composer/installers/tree/v1.12.0"
             },
             "funding": [
                 {
@@ -149,7 +155,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-20T06:45:11+00:00"
+            "time": "2021-09-13T08:19:44+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -342,6 +348,27 @@
                 }
             ],
             "time": "2022-07-30T15:51:26+00:00"
+        },
+        {
+            "name": "pronamic/gravityforms",
+            "version": "2.6.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/gravityforms.git",
+                "reference": "b27aec2cf246cc73ba256f6fd6956e180996e61f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/b27aec2cf246cc73ba256f6fd6956e180996e61f",
+                "reference": "b27aec2cf246cc73ba256f6fd6956e180996e61f",
+                "shasum": ""
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "support": {
+                "source": "https://github.com/pronamic/gravityforms/tree/2.6.8"
+            },
+            "time": "2022-11-10T10:07:29+00:00"
         },
         {
             "name": "roots/bedrock-autoloader",
@@ -1123,6 +1150,32 @@
             "time": "2022-10-16T01:01:54+00:00"
         },
         {
+            "name": "wordpress-premium/advanced-custom-fields-pro",
+            "version": "6.0.6",
+            "source": {
+                "type": "git",
+                "url": "git@gitlab.com:wordpress-premium/advanced-custom-fields-pro.git",
+                "reference": "801a41546c463173900b199acc432d49b7f3c5d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/wordpress-premium%2Fadvanced-custom-fields-pro/repository/archive.zip?sha=801a41546c463173900b199acc432d49b7f3c5d4",
+                "reference": "801a41546c463173900b199acc432d49b7f3c5d4",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.6"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "Customise WordPress with powerful, professional and intuitive fields.",
+            "homepage": "https://www.advancedcustomfields.com",
+            "time": "2022-12-14T20:08:02+00:00"
+        },
+        {
             "name": "wpackagist-plugin/acf-better-search",
             "version": "4.0.1",
             "source": {
@@ -1193,24 +1246,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/ewww-image-optimizer/"
-        },
-        {
-            "name": "wpackagist-plugin/ninja-forms",
-            "version": "3.6.14",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.6.14"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.6.14.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/ninja-forms/"
         },
         {
             "name": "wpackagist-plugin/simple-page-ordering",
