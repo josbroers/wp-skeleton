@@ -5,14 +5,11 @@ web/app/uploads/*
 web/app/languages/*
 web/app/upgrade
 web/app/cache
-web/app/wp-rocket-config
 web/app/settings
-web/app/advanced-cache.php
 web/app/ewww
+web/app/w3tc-config
+web/app/advanced-cache.php
 web/app/debug.log
-
-!web/app/uploads/.gitkeep
-!web/app/plugins/.gitkeep
 
 # WordPress
 web/wp
